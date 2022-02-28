@@ -1,12 +1,10 @@
 {
-  "name": "10-automacao-front-end",
+  "name": "animais-fantasticos",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch"
   },
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.17.5",
