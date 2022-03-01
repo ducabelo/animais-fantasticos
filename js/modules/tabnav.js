@@ -22,7 +22,10 @@ export default class TabNav {
   init() {
     if (this.tabMenu.length && this.tabContent.length);
     // ativar priemiro item
-    this.activeTab(0);
-    this.addTabNavEvent();
+    {
+      this.activeTab(0);
+      this.addTabNavEvent();
+    }
+    return this;
   }
 }
