@@ -1,22 +1,43 @@
-export default function initFuncionamento() {
-  const funcionamento = document.querySelector('[data-semana]');
-  const diasSemana = funcionamento.dataset.semana.split(',').map(Number);
-  const horarioSemana = funcionamento.dataset.horario.split(',').map(Number);
-
-  const dataAgora = new Date();
-  const diaAgora = dataAgora.getDay();
-  const horasAgora = dataAgora.getHours();
-
-  // ver se está aberto pelo dia da semana
-  const semanaAberto = diasSemana.indexOf(diaAgora) !== -1;
-
-  // Como o horário de funcionamento está dentro de uma array, comparamos com o índice. horarioSemana[0] = 8, horarioSemana[1] = 18
-
-  const horarioAberto =
-    horasAgora >= horarioSemana[0] && horasAgora < horarioSemana[1];
-
-  if (semanaAberto && horarioAberto) {
-    funcionamento.classList.add('aberto');
+export default class Funcionamento {
+  constructor(funcionamento, activeClass){
+    this.funcionamento = document.querySelector(funcionamento);
+    this.activeClass = activeClass;
   }
-  console.log(horarioAberto);
+
+  dadosFuncionamento(){
+    this.diasSemana = this.funcionamento.dataset.semana.split(',').map(Number);
+    this.horarioSemana = this.funcionamento.dataset.horario.split(',').map(Number);
+  }
+  
+  dadosAgora(){
+    this.dataAgora = new Date();
+    this.diaAgora = this.dataAgora.getDay();
+    this.horasAgora = this.dataAgora.getUTCHours() - 3;
+  }
+  
+  estaAberto(){
+    // ver se está aberto pelo dia da semana
+    const semanaAberto = this.diasSemana.indexOf(this.diaAgora) !== -1; 
+    // Como o horário de funcionamento está dentro de uma array, comparamos com o índice. horarioSemana[0] = 8, horarioSemana[1] = 18
+
+    const horarioAberto =
+      this.horasAgora >= (this.horarioSemana[0] && this.horasAgora < this.horarioSemana[1]);
+      return semanaAberto && horarioAberto;
+  }
+  
+  ativaAberto(){
+    if (this.estaAberto()) {
+      this.activeClass
+    }  
+  }
+ 
+  init() {
+    if (this.funcionamento){
+      this.dadosFuncionamento();
+      this.dadosAgora();
+      this.ativaAberto();
+    };
+    return this;
+  }
+
 }
