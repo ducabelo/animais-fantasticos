@@ -6,7 +6,7 @@ export default class DropdownMenu {
     this.events = ['touchstart', 'click'];
 
     // define touchstart e click como argumento padrão de events caso o usuário não o defina.
-    if (events === undefined)this.events = 'touchstart', 'click';
+    if (events === undefined)this.events = ['touchstart', 'click'];
     else this.events = events;
 
     this.activeClass = 'ativo';
@@ -35,8 +35,7 @@ export default class DropdownMenu {
   init(){
     if(this.dropdownMenus.length){
        this.addDropdownMenusEvent()
-    }
-   
+    }  
     return this;
   }
   
