@@ -13,13 +13,12 @@
 
 <body>
   <div class="grid-container">
-
-
     <nav class="menu" data-menu="suave">
       <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
       <ul data-menu="list" id="menu">
         <li><a href="#animais">Animais</a></li>
-        <li data-dropdown><a href="sobre.html">Sobre</a>
+        <li data-dropdown>
+          <a href="sobre.html">Sobre</a>
           <ul class="dropdown-menu">
             <li><a href="empresa.html">A Empresa</a></li>
             <li><a href="equipe.html">Equipe</a></li>
@@ -29,10 +28,10 @@
         </li>
         <li><a href="#faq">Faq</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a data-modal="abrir" href="login.html">Login</a></li>
+        <li><a data-modal="abrir" href="login.html">Login →</a></li>
       </ul>
     </nav>
-    <section class="grid-section animais" id="animais" data-anime="scroll">
+    <section class="grid-section animais" data-anime="scroll" id="animais">
       <h1 class="titulo">Animais Fantásticos</h1>
       <ul class="animais-lista" data-tab="menu">
         <li>
@@ -55,14 +54,13 @@
         </li>
       </ul>
       <div class="animais-descricao" data-tab="content">
-        <section class="ativo show-right" data-anime="show-right">
+        <section data-anime="show-right">
           <h2>Raposa</h2>
           <p>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados
             por um focinho comprido e uma cauda longa e peluda.</p>
           <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
-          <p>De cerca de 40 espécies reconhecidas como raposas, somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do
-            qual a raposa vermelha é a mais comum.</p>
-          <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
+          <p>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados
+            por um focinho comprido e uma cauda longa e peluda.</p>
         </section>
 
         <section data-anime="show-right">
@@ -133,7 +131,6 @@
     <section class="grid-section numeros" data-anime="scroll">
       <h1 class="titulo">Números</h1>
       <div class="numeros-grid">
-        <!-- Aqui será preenchido dinamicamente pela função fetch-animais -->
       </div>
     </section>
 
@@ -148,7 +145,7 @@
         <li>Rua do Conde, nº 21</li>
         <li>Rio de Janeiro - RJ</li>
         <li>Doe <span class="btc-preco">0</span> bitcoin para nos ajudar</li>
-        <li data-semana='1,2,3,4,5' data-horario="8,18">Seg à Sexta das 8 às 18</li>
+        <li data-semana="1,2,3,4,5" data-horario="8,18">Seg à Sex das 8 às 18</li>
       </ul>
     </section>
 
@@ -156,6 +153,7 @@
       <p>Todos os direitos reservados.</p>
     </footer>
   </div>
+
   <section class="modal-container" data-modal="container">
     <div class="modal">
       <button data-modal="fechar" class="fechar">X</button>
@@ -168,11 +166,7 @@
       </form>
     </div>
   </section>
-
-
-
-  <script src="main.js "></script>
-
+  <script src="main.js"></script>
 </body>
 
 </html>
